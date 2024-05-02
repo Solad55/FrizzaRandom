@@ -1,0 +1,4 @@
+#Ignora cartelle e file di build
+/build
+/dist
+*.spec
