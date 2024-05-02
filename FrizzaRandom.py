@@ -1,4 +1,5 @@
 import random, time
+from itertools import islice
 from colorama import init,Fore
 from numpy import array_split as asplit
 init(autoreset=True)
@@ -8,6 +9,15 @@ def randCol()->str:
     c=[Fore.BLUE,Fore.CYAN,Fore.GREEN,Fore.MAGENTA,Fore.RED,Fore.YELLOW,Fore.WHITE,Fore.LIGHTBLUE_EX,Fore.LIGHTCYAN_EX,Fore.LIGHTGREEN_EX,Fore.LIGHTMAGENTA_EX,Fore.LIGHTRED_EX,Fore.LIGHTYELLOW_EX] 
     i=random.randint(0,len(c)-1)
     return c[i]
+
+#Preso dal doc di python itertools.batched (è possibile importare il modulo se si usa la versione 3.12. io sono stronzo e sto usando la 3.11)
+def batched(iterable, n):
+    # batched('ABCDEFG', 3) → ABC DEF G
+    if n < 1:
+        raise ValueError('n must be at least one')
+    it = iter(iterable)
+    while batch := tuple(islice(it, n)):
+        yield batch
 
 def pause():
     random.seed()
@@ -47,20 +57,24 @@ def laTavolaImbandita(persone:list, array:list):
     for i in x:
         aggiungiAllaTavola(array, persone, sesso=int(i))
 
-def generelloPazzerelloDelPisello(array:list):
-    teams=["I Pedofili", "I Furry", "BDSM Enjoyer", "Mafia Malvagia della Sardegna", "TangaScomparso", "IBALLINMOONER", "I Coomer", "Saturazione ridotta", "EHI NARCOLESSIA DID YOU PAY MY 50$", "Partitina a Balatro??", "Galactus Tiburtina FanClub", "Chiaramente una canzone di Pesto", "Hanno cercato sessogay su soundcloud", "I finochietti", "FREDDY FAS BEAR, OH-OH-OHOH-OH", "Il posto dove mi bacio con uno", "La blunt rotation", "Le chat di Grindr aperte", "Tossici del cazzo", "Sigma skibidi Fortnite 0 costruzioni"]
+def team()->list:
+    return ["I Pedofili", "I Furry", "BDSM Enjoyer", "Mafia Malvagia della Sardegna", "TangaScomparso", "IBALLINMOONER", "I Coomer", "Saturazione ridotta", "EHI NARCOLESSIA DID YOU PAY MY 50$", "Partitina a Balatro??", "Galactus Tiburtina FanClub", "Chiaramente una canzone di Pesto", "Hanno cercato sessogay su soundcloud", "I finochietti", "FREDDY FAS BEAR, OH-OH-OHOH-OH", "Il posto dove mi bacio con uno", "La blunt rotation", "Le chat di Grindr aperte", "Tossici del cazzo", "Sigma skibidi Fortnite 0 costruzioni"]
+
+def generelloPazzerelloDelPisello(array:list, a:bool=False):
+    teams=team()
     random.seed()
     random.shuffle(array)
-    sesso=asplit(array, 2)
-    i=random.randint(0,len(teams)-1)
-    print(randCol()+f"Squadra 1 {teams[i]}")
-    for i, lob in enumerate(sesso[0]):
-        print(f"{i+1} {lob}", sep="\n")
-    i=random.randint(0,len(teams)-1)
-    print(randCol()+f"\nSquadra 2 {teams[i]}")
-    for i, lob in enumerate(sesso[1]):
-        print(f"{i+1} {lob}", sep="\n")
-
+    if a is False:
+        sesso=asplit(array, 2)
+    else:
+        sesso=list(batched(array, 2))
+    for i in range(len(sesso)):
+        x=random.randint(0,len(teams)-1)
+        print(randCol()+f"Squadra {i+1} {teams[x]}")
+        for i, lob in enumerate(sesso[i]):
+            print(f"{i+1} {lob}", sep="\n")
+        print()
+    
 def ODIOLARIVOLUZIONEINDUSTRIALE():
     random.seed()
     x=random.randint(1,10)
@@ -91,7 +105,8 @@ while(x!=0):
         f"[2] Aggiungi una persona gay alla lobby\n"
         f"[3] Aggiungi un posto a Tavola (lobby), che c'è un piselletto in più\n"
         f"[4] Crea le squadrette (angolo retto(culo) di 90 gradi)\n"
-        f"[5] Fai esplodere il Galactus di Tuscolana (hihihihihihi)\n"
+        f"[5] Mi sono arenato nel mar tirreno\n"
+        f"[6] Fai esplodere il Galactus di Tuscolana (hihihihihihi)\n"
         f"[0] ff15(Esci)\n"))
     print("\n")
     match x:
@@ -104,6 +119,8 @@ while(x!=0):
         case int(4):
             generelloPazzerelloDelPisello(lobby)
         case int(5):
+            generelloPazzerelloDelPisello(lobby, a=True)
+        case int(6):
             ODIOLARIVOLUZIONEINDUSTRIALE()
         case int(0):
             ff15(persone)
