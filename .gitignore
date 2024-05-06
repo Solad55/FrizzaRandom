@@ -2,3 +2,13 @@
 /build
 /dist
 *.spec
+/__pycache__
+.vscode
+
+#Ingora i file node del bot
+FrizzaBot/node_modules
+.env
+FrizzaBot/config.json
+
+#Ignora i file di test e vari
+/FrizzaBot/commands/utility/ping.js_test

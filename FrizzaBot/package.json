@@ -1,0 +1,17 @@
+{
+  "name": "frizzabot",
+  "version": "1.0.0",
+  "description": "Funny bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Solad",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "decache": "^4.6.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "__comment": "REMEMBER TO COMPILE EVERY CAMP, RENAME THIS FILE TO 'config.json' AND REMOVE THIS COMMENT",
+	"token": "YOUR TOKEN BOT HERE",
+    "clientId": "YOUR CLIENT ID BOT HERE",
+    "guildIdDev": "YOUR DEV SERVER ID FOR TESTING",
+    "linkInvite": "YOU CAN SAVE YOUR BOT INVITE LINK HERE"
+}
