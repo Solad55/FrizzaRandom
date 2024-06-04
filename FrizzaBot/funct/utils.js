@@ -30,14 +30,17 @@ class utilsFun {
 
         return array;
     }*/
-    cercascemi = function (arr, tipo) {
-        let found = false;
-        if (tipo == "normal") {
-            arr = this.divide(arr);
-        } else {
-            arr = this.divideBy(arr, 2)
-        }
-        while (!found) {
+    cercascemi = function (a, tipo) {
+        let found = true;
+        while (found) {
+            var arr = a;
+            arr = this.shuffle(arr);
+            if (tipo == "normal") {
+                arr = this.divide(arr);
+            } else {
+                arr = this.divideBy(arr, 2)
+            }
+
 
             arr.forEach((innerArr) => {
 
@@ -53,7 +56,8 @@ class utilsFun {
 
     divide = function (a) {
         var array = a;
-        array = [array.slice(0, array.length / 2), array.slice(array.length / 2)];
+        return [array.slice(0, array.length / 2), array.slice(array.length / 2)];
+
     }
     getRandomInt = function (max) {
         return Math.floor(Math.random() * max);
