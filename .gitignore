@@ -16,3 +16,4 @@ FrizzaBot/config.json
 #Ignora i file di test e vari
 /FrizzaBot/commands/utility/ping.js_test
 /FrizzaBot/bin
+/FrizzaBot/.vs/FrizzaBot
