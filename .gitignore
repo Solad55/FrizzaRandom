@@ -1,9 +1,12 @@
 #Ignora cartelle e file di build
 /build
 /dist
+/bin
 *.spec
 /__pycache__
 .vscode
+/.vs
+/FrizzaBot/obj
 
 #Ingora i file node del bot
 FrizzaBot/node_modules
