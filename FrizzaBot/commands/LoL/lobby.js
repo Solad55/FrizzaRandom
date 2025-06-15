@@ -12,11 +12,6 @@ const persone = [
         value: "FrizzaCaxxerelli",
     },
     {
-        label: "LudoAmica",
-        description: null,
-        value: "LudoAmica",
-    },
-    {
         label: "ILDraduxxo",
         description: null,
         value: "ILDraduxxo",
@@ -67,14 +62,29 @@ const persone = [
         value: "Sawnya",
     },
     {
-        label: "Kasakino piccolino",
-        description: null,
-        value: "Kasakino piccolino",
-    },
-    {
         label: "Mezzino Monopolino",
         description: null,
         value: "Mezzino Monopolino"
+    },
+    {
+        label: "Martino della pomezia",
+        description: null,
+        value: "Martino della pomezia",
+    },
+    {
+        label: "Skibidy Kasaki",
+        description: null,
+        value: "Skibidy Kasaki",
+    },
+    {
+        label: "The micahs",
+        description: null,
+        value: "The micahs",
+    },
+    {
+        label: "LudoAmica",
+        description: null,
+        value: "LudoAmica",
     },
 ];
 
