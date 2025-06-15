@@ -51,6 +51,31 @@ const persone = [
         description: null,
         value: "FrizzarinaLaFrocettina",
     },
+    {
+        label: "Baraldaino",
+        description: null,
+        value : "Baraldaino",
+    },
+    {
+        label: "JustRon PVTech",
+        description: null,
+        value: "JustRon PVTech",
+    },
+    {
+        label: "Sawnya",
+        description: null,
+        value: "Sawnya",
+    },
+    {
+        label: "Kasakino piccolino",
+        description: null,
+        value: "Kasakino piccolino",
+    },
+    {
+        label: "Mezzino Monopolino",
+        description: null,
+        value: "Mezzino Monopolino"
+    },
 ];
 
 
